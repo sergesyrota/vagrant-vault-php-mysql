@@ -7,3 +7,4 @@ cp /vagrant/provision/.my.cnf ~/
 echo "GRANT ALL PRIVILEGES on *.* TO 'vault'@'%' IDENTIFIED BY 'vault' WITH GRANT OPTION;" | mysql
 echo "CREATE DATABASE vault;" | mysql
 sed -i 's/bind-address\s\+=\s\+127.0.0.1/bind-address = 0.0.0.0/g' /etc/mysql/my.cnf
+service mysql restart
